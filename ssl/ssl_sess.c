@@ -361,6 +361,11 @@ unsigned int SSL_SESSION_get_compress_id(const SSL_SESSION *s)
     return s->compress_meth;
 }
 
+const char *SSL_SESSION_get_hostname(const SSL_SESSION *s)
+{
+    return s->tlsext_hostname;
+}
+
 /*
  * SSLv3/TLSv1 has 32 bytes (256 bits) of session ID space. As such, filling
  * the ID with random junk repeatedly until we have no conflict is going to
